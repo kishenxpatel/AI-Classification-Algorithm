@@ -3,7 +3,7 @@ For this coursework, we were given a set of emails and were required to code a c
 
 
 
-CLASSIFICATION | README
+## CLASSIFICATION | README
 
 
 This README is on Part 1. I did not implement Part 2.
