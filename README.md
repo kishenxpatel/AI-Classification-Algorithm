@@ -6,9 +6,10 @@ For this coursework, we were given a set of emails and were required to code a c
 ----- CLASSIFICATION | README -----
 ----------------------------------- 
 
-## This README is on Part 1. I did not implement Part 2.
+This README is on Part 1. I did not implement Part 2.
 
 ----- INTRODUCTION -----
+
 This coursework was based on supervised machine learning. The aim (for Part 1) was to create a classifier to detect whether a set of email messages was either spam or ham. A training dataset (1000 rows) and a testing dataset (500 rows) were both provided, each with a row of response variables/class labels (0 for ham and 1 for spam). There were 54 keywords that could be present in the dataset, and the classifier had to differentiate between spam and ham based on the probabilities that each keyword would appear in a certain class.
 
 The method I used to implement the classifier was a Naive Bayes model, a simple probabilistic classifier. Naive Bayes classifiers assume that a given feature's value is independent of the value of any other feature, given the class variable.
@@ -17,6 +18,7 @@ An advantage of naive Bayes is that it only requires a small number of training 
 
 
 ----- IMPLEMENTATION -----
+
 My general implementation involved first building a model to find the probability that a given message belonged to a certain class, p(C = c| message), known as the class priors. To calculate the class priors, I found the total number of labels for each class (in other words, how many emails of class 0 and class 1 existed in the training data). After finding the totals, I then divided these by the total number of emails there were in the dataset. This gave the proportion of each class in the dataset.
 
 Following on, the next step was to calculate the actual probability of the message belonging to a certain class, called the class conditional likelihood. As this was a Naive Bayes model, I assumed that there was a conditional independence of keywords given a class, and that there was a multinomial distribution for each class. I then counted the relative frequencies of each keyword in the training data - how many times the feature appeared out of the total number of all present keywords in that class.
@@ -37,6 +39,7 @@ argmax[log(p(C = c)) + ∑ (each feature) log(class, feature)]
 
 
 ----- TESTING -----
+
 When testing the classifier, I obtained an accuracy of:
 
 Training Set: 0.804 / 80.4% (1000 rows)
