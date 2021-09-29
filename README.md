@@ -8,7 +8,7 @@ For this coursework, we were given a set of emails and were required to code a c
 
 This README is on Part 1. I did not implement Part 2.
 
------ INTRODUCTION -----
+## ----- INTRODUCTION -----
 
 This coursework was based on supervised machine learning. The aim (for Part 1) was to create a classifier to detect whether a set of email messages was either spam or ham. A training dataset (1000 rows) and a testing dataset (500 rows) were both provided, each with a row of response variables/class labels (0 for ham and 1 for spam). There were 54 keywords that could be present in the dataset, and the classifier had to differentiate between spam and ham based on the probabilities that each keyword would appear in a certain class.
 
@@ -17,7 +17,7 @@ The method I used to implement the classifier was a Naive Bayes model, a simple 
 An advantage of naive Bayes is that it only requires a small number of training data to estimate the parameters necessary for classification. (https://en.wikipedia.org/wiki/Naive_Bayes_classifier)
 
 
------ IMPLEMENTATION -----
+## ----- IMPLEMENTATION -----
 
 My general implementation involved first building a model to find the probability that a given message belonged to a certain class, p(C = c| message), known as the class priors. To calculate the class priors, I found the total number of labels for each class (in other words, how many emails of class 0 and class 1 existed in the training data). After finding the totals, I then divided these by the total number of emails there were in the dataset. This gave the proportion of each class in the dataset.
 
@@ -38,7 +38,7 @@ I computed the argmax() on the above list to find the index where the highest pr
 argmax[log(p(C = c)) + ∑ (each feature) log(class, feature)]
 
 
------ TESTING -----
+## ----- TESTING -----
 
 When testing the classifier, I obtained an accuracy of:
 
